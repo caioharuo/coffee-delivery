@@ -33,7 +33,11 @@ module.exports = {
       sans: ['Roboto', 'sans-serif'],
       cursive: ["'Baloo 2'", 'cursive'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        background: "url('./src/assets/background.png')",
+      },
+    },
   },
   plugins: [],
 };
