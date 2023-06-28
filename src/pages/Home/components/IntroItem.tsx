@@ -12,7 +12,7 @@ export function IntroItem({ iconBgColor, icon, text }: IntroItemProps) {
       <div className={`p-2 inline-block rounded-full ${iconBgColor}`}>
         {icon}
       </div>
-      <span>{text}</span>
+      <span className="whitespace-nowrap">{text}</span>
     </div>
   );
 }
