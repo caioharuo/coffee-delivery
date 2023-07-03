@@ -16,19 +16,19 @@ export function Counter() {
 
   return (
     <div className="bg-gray-300 flex items-center justify-center gap-1 p-2 rounded-lg">
-      <button onClick={decrease}>
+      <button type="button" onClick={decrease}>
         <Minus
           weight="bold"
-          className="w-[0.875rem] h-[0.875rem] text-purple-500"
+          className="w-[0.875rem] h-[0.875rem] text-purple-500 transition-colors hover:text-purple-800"
         />
       </button>
       <span className="text-gray-800 flex items-center justify-center w-5 leading-snug">
         {count}
       </span>
-      <button onClick={increase}>
+      <button type="button" onClick={increase}>
         <Plus
           weight="bold"
-          className="w-[0.875rem] h-[0.875rem] text-purple-500"
+          className="w-[0.875rem] h-[0.875rem] text-purple-500 transition-colors hover:text-purple-800"
         />
       </button>
     </div>
