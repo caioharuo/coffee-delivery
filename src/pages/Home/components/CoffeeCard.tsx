@@ -21,7 +21,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
   return (
     <div className="max-w-[256px] flex flex-col items-center bg-gray-100 rounded-tl-md rounded-tr-[36px] rounded-br-md rounded-bl-[36px] px-6 pb-5">
       <img
-        src={`public/coffees/${imageFilename}`}
+        src={`/coffees/${imageFilename}`}
         alt=""
         className="w-[120px] relative -top-4"
       />
