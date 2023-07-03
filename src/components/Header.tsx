@@ -4,7 +4,9 @@ import { MapPin, ShoppingCart } from 'phosphor-react';
 export function Header() {
   return (
     <header className="flex items-center justify-between max-w-[1120px] mx-auto py-8">
-      <img src={logoImg} alt="" />
+      <a href="/">
+        <img src={logoImg} alt="" />
+      </a>
 
       <div className="flex gap-3">
         <div className="flex bg-purple-100 p-2 gap-1 rounded-lg">
@@ -12,9 +14,9 @@ export function Header() {
           <span className="text-purple-800 text-sm">Porto Alegre, RS</span>
         </div>
 
-        <button className="bg-yellow-100 p-2 gap-1 rounded-lg">
+        <a href="/checkout" className="bg-yellow-100 p-2 gap-1 rounded-lg">
           <ShoppingCart className="text-yellow-700" size={22} weight="fill" />
-        </button>
+        </a>
       </div>
     </header>
   );
