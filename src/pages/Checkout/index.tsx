@@ -1,11 +1,17 @@
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
 import classNames from 'classnames';
 import { Bank, CreditCard, MapPinLine, Money } from 'phosphor-react';
+import { useNavigate } from 'react-router-dom';
 import { SelectedCoffeeCard } from './components/SelectedCoffeeCard';
 
 export function Checkout() {
+  const navigate = useNavigate();
+
   return (
-    <form className="w-full max-w-[1120px] mx-auto my-10 flex gap-8">
+    <form
+      onSubmit={() => navigate('/success')}
+      className="w-full max-w-[1120px] mx-auto my-10 flex gap-8"
+    >
       <div className="flex flex-col w-full max-w-[640px] gap-3">
         <div className="flex flex-col gap-4">
           <h3 className="text-lg font-bold font-cursive">

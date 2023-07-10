@@ -15,8 +15,14 @@ export function Header() {
           <span className="text-purple-800 text-sm">Porto Alegre, RS</span>
         </div>
 
-        <Link to="/checkout" className="bg-yellow-100 p-2 gap-1 rounded-lg">
+        <Link
+          to="/checkout"
+          className="bg-yellow-100 p-2 gap-1 rounded-lg relative"
+        >
           <ShoppingCart className="text-yellow-700" size={22} weight="fill" />
+          <span className="bg-yellow-700 text-white text-xs font-bold w-5 h-5 rounded-full absolute -top-2 -right-2 flex items-center justify-center">
+            3
+          </span>
         </Link>
       </div>
     </header>

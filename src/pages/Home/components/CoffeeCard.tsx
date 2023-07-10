@@ -1,8 +1,7 @@
 import { ShoppingCart } from 'phosphor-react';
-import coffeeImg from '../../../assets/coffees/american-espresso.png';
 import { Counter } from '../../../components/Counter';
 
-type Coffee = {
+export type Coffee = {
   id: number;
   name: string;
   description: string;

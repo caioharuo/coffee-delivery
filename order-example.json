@@ -1,0 +1,28 @@
+{
+  "order": {
+    "coffees": [
+      {
+        "id": 1,
+        "name": "Expresso Tradicional",
+        "amount": 1,
+        "price": 9.9
+      },
+      {
+        "id": 2,
+        "name": "Latte",
+        "amount": 1,
+        "price": 9.9
+      }
+    ],
+    "address": {
+      "cep": "07793270",
+      "street": "Rua Tietê",
+      "number": 1,
+      "complementary": "",
+      "district": "Polvilho",
+      "city": "Cajamar",
+      "uf": "SP"
+    },
+    "paymentType": "credit"
+  }
+}
