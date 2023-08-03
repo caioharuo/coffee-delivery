@@ -1,20 +1,31 @@
 import { ShoppingCart } from 'phosphor-react';
+import { useContext, useState } from 'react';
+import { Coffee } from '../../../@types/coffee';
 import { Counter } from '../../../components/Counter';
-
-export type Coffee = {
-  id: number;
-  name: string;
-  description: string;
-  imageFilename: string;
-  tags: string[];
-  price: number;
-};
+import { OrderContext } from '../../../contexts/OrderContext';
 
 interface CoffeeCardProps {
   coffee: Coffee;
 }
 
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const { order, addToOrder } = useContext(OrderContext);
+  const initialAmount =
+    order.find(({ coffee: orderCoffee }) => orderCoffee.id === coffee.id)
+      ?.amount || 0;
+
+  const [amount, setAmount] = useState(initialAmount);
+
+  function increase() {
+    setAmount(amount + 1);
+  }
+
+  function decrease() {
+    if (amount > 0) {
+      setAmount(amount - 1);
+    }
+  }
+
   const { name, description, imageFilename, price, tags } = coffee;
 
   return (
@@ -49,8 +60,11 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
         </span>
 
         <div className="flex gap-2 items-center">
-          <Counter />
-          <button className="p-2 bg-purple-800 rounded-md">
+          <Counter counter={amount} decrease={decrease} increase={increase} />
+          <button
+            onClick={() => addToOrder(coffee, amount)}
+            className="p-2 bg-purple-800 rounded-md"
+          >
             <ShoppingCart
               weight="fill"
               className="text-white w-[22px] h-[22px]"

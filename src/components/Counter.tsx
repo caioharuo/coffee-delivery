@@ -1,19 +1,12 @@
 import { Minus, Plus } from 'phosphor-react';
-import { useState } from 'react';
 
-export function Counter() {
-  const [count, setCount] = useState(0);
+interface CounterProps {
+  counter: number;
+  decrease: () => void;
+  increase: () => void;
+}
 
-  function increase() {
-    setCount(count + 1);
-  }
-
-  function decrease() {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
-
+export function Counter({ counter, decrease, increase }: CounterProps) {
   return (
     <div className="bg-gray-300 flex items-center justify-center gap-1 p-2 rounded-lg">
       <button type="button" onClick={decrease}>
@@ -23,7 +16,7 @@ export function Counter() {
         />
       </button>
       <span className="text-gray-800 flex items-center justify-center w-5 leading-snug">
-        {count}
+        {counter}
       </span>
       <button type="button" onClick={increase}>
         <Plus
